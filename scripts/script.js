@@ -28,7 +28,7 @@ while (submittedMail === "" || !regex.test(submittedMail)) {
 //Facciamo un Sort della mailList
 for (let i = 0; i < mailList.length; i++) {
     let minIndex = i; // Assumiamo che l'elemento corrente sia il più "piccolo", ovvero sia in ordine alfabetico precedente rispetto a quello che andremo a controllare
-    for (let j = i + 1; j < mailList.length; j++) { //For interno, controlliamo, da j = 1, tutti i valori a destra del nostro minIndex (che parte da 0 e viene aggiornato ad i ad ogni ciclo)
+    for (let j = i + 1; j < mailList.length; j++) { //For interno, controlliamo, da j = i + 1, tutti i valori a destra del nostro minIndex (che parte da 0 e viene aggiornato ad i ad ogni ciclo)
         if (mailList[j].toLowerCase() < mailList[minIndex].toLowerCase()) { //Se mailList[j] viene alfabeticamente prima di mailList[minIndex]
             minIndex = j; //Allora abbiamo trovato il nostro nuovo minIndex e ripetiamo il ciclo fino ad esaurimento di j
         }
