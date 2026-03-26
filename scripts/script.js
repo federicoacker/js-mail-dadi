@@ -46,7 +46,7 @@ for (let i = 0; i < mailList.length; i++) {
 
 //Quindi in maniera logica:
 //Il search binario funziona che prendo l'array ordinato che ho, vado a controllare il valore nel mezzo
-//Se non è quello che sto cercando, controllo, il valore che abbiamo guardato, era più piccolo o più grande di quello che stiamo cercando?
+//Se non è quello che sto cercando, controllo: il valore che abbiamo guardato era più piccolo o più grande di quello che stiamo cercando?
 //Se più piccolo controllo nella metà di destra dell'array (in maniera ricorsiva)
 //Se più grande controllo nella metà di sinistra dell'array (in maniera ricorsiva)
 //Funzione per implementare un binarySearch:
