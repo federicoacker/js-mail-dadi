@@ -18,6 +18,12 @@ const mailList = [
     "helloWorld@hotmail.com",
     "javaScript@libero.it"
 ]
-const regex = ""; // In via di sviluppo
+const regex = /./; // In via di sviluppo
 
 let submittedMail = "";
+
+while(submittedMail === "" || !regex.test(submittedMail)){
+    submittedMail = prompt("Inserisci la tua mail per vedere se sei sulla lista degli invitati");
+}
+
+
