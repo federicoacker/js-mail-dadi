@@ -18,7 +18,8 @@ const mailList = [
     "helloWorld@hotmail.com",
     "javaScript@libero.it"
 ]
-const regex = /.+[@]+(\bgmail\.com\b|\bhotmail\.com\b|\byahoo\.com\b|\blibero\.it\b|proton\.me)/; // In via di sviluppo
+const regex = /.+[@]+(\bgmail\.com\b|\bhotmail\.com\b|\byahoo\.com\b|\blibero\.it\b|proton\.me\b)/; // In via di sviluppo, scritto un po' per volta su regex101 per testare che funzionasse
+// controlla se la mail inviata è nel formato "qualsiasicosavuoi@gmail.com/hotmail.com/yahoo.com/libero.it/proton.me"
 
 let submittedMail = "";
 
