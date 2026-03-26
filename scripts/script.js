@@ -72,3 +72,8 @@ function binarySearchStringArray(
 }
 
 //A questo punto, facciamo un veloce controllo per assicurarci che la mail inserita dall'utente sia nella lista mail
+if(binarySearchStringArray(mailList, submittedMail) !== -1){
+    console.log("Sei invitato alla festa");
+}else{
+    console.log("Non sei invitato alla festa");
+}
