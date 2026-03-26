@@ -10,3 +10,14 @@ Non è necessario provvedere alla validazione delle email, però se volete è un
 
 
 // DICHIARAZIONE VARIABILI
+const mailList = [
+    "ciaociao@gmail.com",
+    "giangiovangiangiacomo@gmail.com",
+    "test123@gmail.com",
+    "ciaone@yahoo.com",
+    "helloWorld@hotmail.com",
+    "javaScript@libero.it"
+]
+const regex = ""; // In via di sviluppo
+
+let submittedMail = "";
