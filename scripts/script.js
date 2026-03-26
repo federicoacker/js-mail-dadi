@@ -18,7 +18,7 @@ const mailList = [
     "helloWorld@hotmail.com",
     "javaScript@libero.it"
 ]
-const regex = /./; // In via di sviluppo
+const regex = /.+[@]+(\bgmail\.com\b|\bhotmail\.com\b|\byahoo\.com\b|\blibero\.it\b|proton\.me)/; // In via di sviluppo
 
 let submittedMail = "";
 
@@ -27,14 +27,14 @@ while (submittedMail === "" || !regex.test(submittedMail)) {
 }
 //Facciamo un Sort della mailList
 for (let i = 0; i < mailList.length; i++) {
-    let minIndex = i ; // Assumiamo che l'elemento corrente sia il più "piccolo", ovvero sia in ordine alfabetico precedente rispetto a quello che andremo a controllare
+    let minIndex = i; // Assumiamo che l'elemento corrente sia il più "piccolo", ovvero sia in ordine alfabetico precedente rispetto a quello che andremo a controllare
     for (let j = i + 1; j < mailList.length; j++) { //For interno, controlliamo, da j = 1, tutti i valori a destra del nostro minIndex (che parte da 0 e viene aggiornato ad i ad ogni ciclo)
         if (mailList[j].toLowerCase() < mailList[minIndex].toLowerCase()) { //Se mailList[j] viene alfabeticamente prima di mailList[minIndex]
             minIndex = j; //Allora abbiamo trovato il nostro nuovo minIndex e ripetiamo il ciclo fino ad esaurimento di j
         }
     }
     // Adesso, usciti dal for interno, controlliamo se minIndex è cambiato
-    if (minIndex !== i){ //Se minIndex è cambiato e non è più uguale a i
+    if (minIndex !== i) { //Se minIndex è cambiato e non è più uguale a i
         const savedMail = mailList[i]; //Allora salviamo mailList[i] in una variabile temporanea
         mailList[i] = mailList[minIndex]; //Cambiamo di posto mailList[i] con mailList[minIndex] in modo che sia effettivamente nell'ordine giusto
         mailList[minIndex] = savedMail; //Mettiamo al posto del vecchio mailList[minIndex] il savedMail che era la nostra variabile temporanea, così di fatto abbiamo scambiato di posto i due valori che non erano in ordine
@@ -49,7 +49,6 @@ for (let i = 0; i < mailList.length; i++) {
 //Se non è quello che sto cercando, controllo, il valore che abbiamo guardato, era più piccolo o più grande di quello che stiamo cercando?
 //Se più piccolo controllo nella metà di destra dell'array (in maniera ricorsiva)
 //Se più grande controllo nella metà di sinistra dell'array (in maniera ricorsiva)
-let index = 0;
 //Funzione per implementare un binarySearch:
 function binarySearchStringArray(
     arrayToSearch, //Gli fornisco l'array in cui cercare (che è stato già ordinato dal nostro sort di prima)
@@ -71,3 +70,5 @@ function binarySearchStringArray(
         return binarySearchStringArray(arrayToSearch, searchTerm, halfIndex + 1, high);//Ritorno di nuovo la funzione, passandogli stavolta come high sempre lo stesso di prima, cioè la fine dell'array nella prima recursione, ma come low, halfIndex + 1, sto in pratica andando a guardare nel subarray di destra
     }
 }
+
+//A questo punto, facciamo un veloce controllo per assicurarci che la mail inserita dall'utente sia nella lista mail
