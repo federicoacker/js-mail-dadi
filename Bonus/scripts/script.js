@@ -65,7 +65,7 @@ for (let i = 0; i < mailList.length; i++) {
 //Funzione per implementare un binarySearch:
 function binarySearchStringArray(
     arrayToSearch, //Gli fornisco l'array in cui cercare (che è stato già ordinato dal nostro sort di prima)
-    searchTerm, //Gli fornisco ciò per cui sta cercando
+    searchTerm, //Gli fornisco ciò che sto cercando
     low = 0, //Gli fornisco il boundary inferiore per il "subarray", di default 0
     high = arrayToSearch.length - 1 //Gli fornisco il boundary superiore per il "subarray", di default è l'ultimo indice dell'array
 ) {

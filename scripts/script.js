@@ -36,7 +36,7 @@ while (submittedMail === "" || !regex.test(submittedMail)) {
 }
 
 // CONTROLLA SE LA MAIL INSERITA E' NELLA MAIL LIST
-for (let i = 0; i < mailList.length && !mailFound; i++) //Il ciclo for scorre tutta la lista fino alla fine o finché non viene trovata la mail
+for (let i = 0;  !mailFound && i < mailList.length; i++) //Il ciclo for scorre tutta la lista fino alla fine o finché non viene trovata la mail
 {
     if (submittedMail === mailList[i]) { //Se trovi la mail inserita dall'utente, dentro la mailList
         mailFound = true; //Metti la flag a true, questo ci farà uscire dal ciclo
